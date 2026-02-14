@@ -3,6 +3,12 @@
     --text: #f8fafc;
     --bg-dark: #0f172a;
     --font-main: 'Space Grotesk', sans-serif;
+    /* Code Editor Colors */
+    --code-bg: #1e1e1e;
+    --code-keyword: #c678dd;
+    --code-func: #61afef;
+    --code-string: #98c379;
+    --code-bool: #d19a66;
 }
 
 * {
@@ -145,7 +151,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .about-image img {
@@ -160,6 +166,62 @@ h2 {
     line-height: 1.8;
     opacity: 0.9;
 }
+
+/* --- NEW CODE WINDOW STYLES --- */
+.code-window {
+    background: var(--code-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.code-header {
+    background: #2d2d2d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.file-name {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.code-body {
+    padding: 24px;
+    font-size: 0.95rem;
+    color: #abb2bf;
+    line-height: 1.7;
+    margin: 0;
+    overflow-x: auto;
+}
+
+/* Syntax Highlighting */
+.keyword { color: var(--code-keyword); }
+.func { color: var(--code-func); }
+.string { color: var(--code-string); }
+.bool { color: var(--code-bool); }
+/* --- END NEW CODE WINDOW STYLES --- */
 
 /* Project Cards */
 .projects-grid {
@@ -242,10 +304,6 @@ footer {
 
 .social-links a:hover {
     opacity: 1;
-}
-
-.discord-tag {
-    cursor: default;
 }
 
 /* Animations */
