@@ -28,7 +28,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Background System */
 .video-container {
     position: fixed;
     top: 0;
@@ -136,7 +135,6 @@ h1 {
     box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
 }
 
-/* Sections */
 section {
     padding: 8rem 0;
 }
@@ -167,7 +165,6 @@ h2 {
     opacity: 0.9;
 }
 
-/* --- NEW CODE WINDOW STYLES --- */
 .code-window {
     background: var(--code-bg);
     border-radius: 12px;
@@ -183,7 +180,7 @@ h2 {
     padding: 12px 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 15px;
 }
 
 .dots {
@@ -205,6 +202,29 @@ h2 {
     font-size: 0.8rem;
     color: #888;
     letter-spacing: 1px;
+    margin-right: auto; /* Pushes button to the right */
+}
+
+#run-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#run-button:hover {
+    background: #4f46e5;
+    transform: scale(1.05);
+}
+
+#run-button:active {
+    transform: scale(0.95);
 }
 
 .code-body {
@@ -221,7 +241,21 @@ h2 {
 .func { color: var(--code-func); }
 .string { color: var(--code-string); }
 .bool { color: var(--code-bool); }
-/* --- END NEW CODE WINDOW STYLES --- */
+
+.terminal {
+    background: #000;
+    color: #fff;
+    padding: 15px 24px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: none; /* Initially hidden */
+}
+
+.terminal-line {
+    display: block;
+    margin-bottom: 4px;
+}
 
 /* Project Cards */
 .projects-grid {
@@ -281,7 +315,6 @@ h2 {
     width: fit-content;
 }
 
-/* Footer */
 footer {
     padding: 4rem 0;
     text-align: center;
