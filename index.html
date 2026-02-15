@@ -51,6 +51,7 @@
                                     <span class="dot green"></span>
                                 </div>
                                 <span class="file-name">vibe_check.py</span>
+                                <button id="run-button" onclick="runVibeCheck()">▶ Run Code</button>
                             </div>
                             <pre class="code-body"><code><span class="keyword">def</span> <span class="func">check_vibe</span>():
     status = {
@@ -64,6 +65,7 @@
         print(key, <span class="string">":"</span>, value)
 
 check_vibe()</code></pre>
+                            <div id="terminal-output" class="terminal"></div>
                         </div>
                         </div>
                 </div>
@@ -118,5 +120,43 @@ check_vibe()</code></pre>
             </div>
         </footer>
     </main>
+
+    <script>
+        function runVibeCheck() {
+            const output = document.getElementById('terminal-output');
+            const btn = document.getElementById('run-button');
+            
+            output.style.display = 'block';
+            output.innerHTML = '<span class="terminal-line" style="color: #888">Executing vibe_check.py...</span>';
+            btn.innerText = "Running...";
+            btn.style.opacity = "0.5";
+            btn.disabled = true;
+
+            const status = {
+                "Energy": "100%",
+                "Connection": "Stable",
+                "creative_mode": "True",
+                "Luck": "Enough"
+            };
+
+            let delay = 600; // Initial delay to feel like it's "loading"
+            
+            Object.entries(status).forEach(([key, value]) => {
+                setTimeout(() => {
+                    const line = document.createElement('span');
+                    line.className = 'terminal-line';
+                    line.innerHTML = `<span style="color: #6366f1">>>></span> ${key} : ${value}`;
+                    output.appendChild(line);
+                }, delay);
+                delay += 250; 
+            });
+
+            setTimeout(() => {
+                btn.innerText = "▶ Run Code";
+                btn.style.opacity = "1";
+                btn.disabled = false;
+            }, delay + 200);
+        }
+    </script>
 </body>
 </html>
