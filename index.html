@@ -37,12 +37,13 @@
             <div class="container">
                 <h2>About Me</h2>
                 <div class="about-grid">
+                    
                     <div class="about-image">
                         <img src="https://github.com/giannis211.png" alt="Giannis Karakikes">
                     </div>
-
+        
                     <div class="about-content">
-                        <p>My real name is Giannis Karakikes. I was born and i currently live in Greece. I get along well with most people I meet. Sooooo i will get along well with you too:). I specialize in Python-based automation and Discord utilities, turning complex problems into simple, functional tools. I can automate any Discord bot/Discord account.</p>
+                        <p>My real name is Giannis Karakikes. I specialize in Python-based automation and Discord utilities, turning complex problems into simple, functional tools.</p>
                         
                         <div class="code-window reveal delay-1">
                             <div class="code-header">
@@ -55,31 +56,29 @@
                                 <button id="run-button" onclick="runVibeCheck()">▶ Run Code</button>
                             </div>
                             <pre class="code-body"><code><span class="keyword">def</span> <span class="func">check_vibe</span>():
-    status = {
-        <span class="string">"Energy"</span>: <span class="string">"100%"</span>,
-        <span class="string">"Connection"</span>: <span class="string">"Stable"</span>,
-        <span class="string">"creative_mode"</span>: <span class="bool">True</span>,
-        <span class="string">"Luck"</span>: <span class="string">"Enough"</span>
-    }
-    
-    <span class="keyword">for</span> key, value <span class="keyword">in</span> status.items():
-        print(key, <span class="string">":"</span>, value)
-
-check_vibe()</code></pre>
+            status = {"Energy": "100%", "creative_mode": <span class="bool">True</span>}
+            print(status)
+        
+        check_vibe()</code></pre>
                             <div id="terminal-output" class="terminal"></div>
                         </div>
                     </div>
-
-                    <div class="tiktok-wrapper reveal delay-2">
-                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@georgem_21/video/7339233621454556449" data-video-id="7339233621454556449" style="max-width: 605px;min-width: 325px;" > 
-                            <section> <a target="_blank" title="@georgem_21" href="https://www.tiktok.com/@georgem_21?refer=embed">@georgem_21</a> </section> 
-                        </blockquote> 
-                        <script async src="https://www.tiktok.com/embed.js"></script>
+        
+                    <div class="video-window reveal delay-2">
+                        <video 
+                            src="video.mp4" 
+                            autoplay 
+                            loop 
+                            muted 
+                            controls
+                            playsinline>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
+        
                 </div>
             </div>
         </section>
-
         <section id="projects">
             <div class="container">
                 <h2>Projects</h2>
