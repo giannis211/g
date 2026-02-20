@@ -147,37 +147,35 @@ h2 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr; /* Updated for 3 columns */
+    grid-template-columns: 1fr 1.5fr 1fr; 
     gap: 2rem;
     align-items: flex-start;
 }
 
-.about-image img {
+.video-window {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* TikTok Specific Styles */
-.tiktok-wrapper {
-    width: 100%;
-    min-width: 325px;
+    background: #000;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    background: #000;
+    line-height: 0; /* Removes tiny gap at bottom of video */
 }
 
-.tiktok-embed {
-    margin: 0 !important;
+.video-window video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .about-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .video-window {
+        max-width: 400px;
+        margin: 2rem auto 0;
+    }
 }
 
 .code-window {
@@ -350,7 +348,6 @@ footer {
     opacity: 1;
 }
 
-/* Animations */
 .reveal {
     animation: fadeUp 1s ease forwards;
     opacity: 0;
