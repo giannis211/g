@@ -147,8 +147,8 @@ h2 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Updated for 3 columns */
+    gap: 2rem;
     align-items: flex-start;
 }
 
@@ -160,9 +160,24 @@ h2 {
 }
 
 .about-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
     opacity: 0.9;
+}
+
+/* TikTok Specific Styles */
+.tiktok-wrapper {
+    width: 100%;
+    min-width: 325px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    background: #000;
+}
+
+.tiktok-embed {
+    margin: 0 !important;
 }
 
 .code-window {
@@ -202,7 +217,7 @@ h2 {
     font-size: 0.8rem;
     color: #888;
     letter-spacing: 1px;
-    margin-right: auto; /* Pushes button to the right */
+    margin-right: auto;
 }
 
 #run-button {
@@ -221,10 +236,6 @@ h2 {
 #run-button:hover {
     background: #4f46e5;
     transform: scale(1.05);
-}
-
-#run-button:active {
-    transform: scale(0.95);
 }
 
 .code-body {
@@ -249,7 +260,7 @@ h2 {
     font-family: 'Consolas', monospace;
     font-size: 0.85rem;
     border-top: 1px solid rgba(255,255,255,0.1);
-    display: none; /* Initially hidden */
+    display: none;
 }
 
 .terminal-line {
@@ -359,8 +370,12 @@ footer {
     }
 }
 
+@media (max-width: 1024px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .tiktok-wrapper { margin: 0 auto; }
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 3rem; }
-    .about-grid { grid-template-columns: 1fr; }
     nav { padding: 1.5rem 2rem; }
 }
